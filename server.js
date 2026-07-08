@@ -20,6 +20,8 @@ const allowedOrigins = [
   'http://localhost:5186',
   'https://galalive-client-n8xkkgtfw-harker1544.vercel.app',
   'https://galalive-bd9lylikz-harker1544.vercel.app',
+  'https://galalive-client-mjckme0dh-harker1544.vercel.app',
+  'https://galalive-21fil1q63-harker1544.vercel.app',
   'https://galalive-client.vercel.app',
   'https://galalive-pc.vercel.app'
 ];
