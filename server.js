@@ -19,7 +19,9 @@ const allowedOrigins = [
   'http://localhost:5185',
   'http://localhost:5186',
   'https://galalive-client-n8xkkgtfw-harker1544.vercel.app',
-  'https://galalive-bd9lylikz-harker1544.vercel.app'
+  'https://galalive-bd9lylikz-harker1544.vercel.app',
+  'https://galalive-client.vercel.app',
+  'https://galalive-pc.vercel.app'
 ];
 
 app.use(cors({
@@ -30,19 +32,14 @@ app.use(express.json());
 
 const uploadsDir = path.join(__dirname, 'public', 'uploads');
 if (!fs.existsSync(uploadsDir)) {
-  fs.mkdirSync(uploadsDir, { recursive: true });
+  try {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+  } catch (e) {
+    console.warn('Cannot create uploads directory (read-only filesystem)');
+  }
 }
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadsDir);
-  },
-  filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    const filename = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}${ext}`;
-    cb(null, filename);
-  }
-});
+const storage = multer.memoryStorage();
 
 const upload = multer({
   storage,
@@ -63,8 +60,18 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: '请选择文件' });
   }
-  const url = `/uploads/${req.file.filename}`;
-  res.json({ url });
+  const ext = path.extname(req.file.originalname);
+  const filename = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}${ext}`;
+  const filepath = path.join(uploadsDir, filename);
+  
+  try {
+    fs.writeFileSync(filepath, req.file.buffer);
+    const url = `/uploads/${filename}`;
+    res.json({ url });
+  } catch (e) {
+    console.error('Upload failed:', e);
+    res.status(500).json({ error: '文件上传失败，服务器文件系统只读' });
+  }
 });
 
 const authRoutes = require('./routes/auth');
@@ -176,9 +183,27 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Gala Live API Server',
+    status: 'running',
+    endpoints: {
+      health: '/api/health',
+      auth: '/api/auth',
+      streams: '/api/streams',
+      gifts: '/api/gifts',
+      users: '/api/users',
+      banners: '/api/banners',
+      admin: '/api/admin'
+    }
+  });
+});
+
 initDatabase();
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' && process.env.VERCEL) {
+  module.exports = app;
+} else if (process.env.NODE_ENV === 'production') {
   module.exports = app;
 } else {
   server.listen(process.env.PORT, () => {
