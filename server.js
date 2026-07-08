@@ -18,8 +18,8 @@ const allowedOrigins = [
   'http://localhost:5184',
   'http://localhost:5185',
   'http://localhost:5186',
-  'https://galalive-client.vercel.app',
-  'https://galalive-pc.vercel.app'
+  'https://galalive-client-n8xkkgtfw-harker1544.vercel.app',
+  'https://galalive-bd9lylikz-harker1544.vercel.app'
 ];
 
 app.use(cors({
