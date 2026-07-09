@@ -2,14 +2,18 @@ const fs = require('fs');
 const path = require('path');
 
 const DB_FILE = path.join(__dirname, 'data.json');
+const isProduction = process.env.NODE_ENV === 'production';
 
 class FileDatabase {
   constructor() {
     this.tables = {};
     this.autoIncrement = {};
+    this.hasLoaded = false;
   }
 
   load() {
+    if (this.hasLoaded) return;
+    
     try {
       const data = fs.readFileSync(DB_FILE, 'utf8');
       const parsed = JSON.parse(data);
@@ -25,9 +29,13 @@ class FileDatabase {
     } catch {
       this.initDefaultData();
     }
+    
+    this.hasLoaded = true;
   }
 
   save() {
+    if (isProduction) return;
+    
     const data = {
       tables: this.tables,
       autoIncrement: this.autoIncrement
