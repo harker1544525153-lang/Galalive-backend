@@ -1,4 +1,4 @@
-﻿﻿const express = require('express');
+﻿const express = require('express');
 const { getDB } = require('../database');
 const { authenticateToken } = require('../middleware/auth');
 
@@ -13,7 +13,13 @@ router.post('/follow', authenticateToken, (req, res) => {
 
   const db = getDB();
   try {
-    const result = db.prepare('INSERT OR IGNORE INTO follows (follower_id, followee_id) VALUES (?, ?)').run(req.user.id, followeeId);
+    const existing = db.prepare('SELECT * FROM follows WHERE follower_id = ? AND followee_id = ?').get(req.user.id, followeeId);
+    
+    if (existing) {
+      return res.json({ message: '已关注', followed: true });
+    }
+    
+    const result = db.prepare('INSERT INTO follows (follower_id, followee_id) VALUES (?, ?)').run(req.user.id, followeeId);
     res.json({ message: '关注成功', followed: result.changes > 0 });
   } catch (error) {
     res.status(500).json({ error: '关注失败' });
@@ -36,7 +42,7 @@ router.get('/following', authenticateToken, (req, res) => {
   const db = getDB();
   try {
     const users = db.prepare(
-      'SELECT u.id, u.username, u.nickname, u.phone, u.avatar, u.is_host FROM follows f JOIN users u ON f.followee_id = u.id WHERE f.follower_id = ?'
+      'SELECT u.id, u.username, u.nickname, u.phone, u.cover, u.is_host, u.level FROM follows f JOIN users u ON f.followee_id = u.id WHERE f.follower_id = ?'
     ).all(req.user.id);
 
     res.json(users);
@@ -49,7 +55,7 @@ router.get('/followers', authenticateToken, (req, res) => {
   const db = getDB();
   try {
     const users = db.prepare(
-      'SELECT u.id, u.username, u.nickname, u.phone, u.avatar FROM follows f JOIN users u ON f.follower_id = u.id WHERE f.followee_id = ?'
+      'SELECT u.id, u.username, u.nickname, u.phone, u.cover FROM follows f JOIN users u ON f.follower_id = u.id WHERE f.followee_id = ?'
     ).all(req.user.id);
 
     res.json(users);
@@ -64,7 +70,7 @@ router.get('/:userId/following', (req, res) => {
   const db = getDB();
   try {
     const users = db.prepare(
-      'SELECT u.id, u.username, u.nickname, u.phone, u.avatar, u.is_host FROM follows f JOIN users u ON f.followee_id = u.id WHERE f.follower_id = ?'
+      'SELECT u.id, u.username, u.nickname, u.phone, u.cover, u.is_host, u.level FROM follows f JOIN users u ON f.followee_id = u.id WHERE f.follower_id = ?'
     ).all(userId);
 
     res.json(users);
@@ -79,7 +85,7 @@ router.get('/:userId/followers', (req, res) => {
   const db = getDB();
   try {
     const users = db.prepare(
-      'SELECT u.id, u.username, u.nickname, u.phone, u.avatar FROM follows f JOIN users u ON f.follower_id = u.id WHERE f.followee_id = ?'
+      'SELECT u.id, u.username, u.nickname, u.phone, u.cover FROM follows f JOIN users u ON f.follower_id = u.id WHERE f.followee_id = ?'
     ).all(userId);
 
     res.json(users);

@@ -1,8 +1,60 @@
-﻿const express = require('express');
+const express = require('express');
 const { getDB } = require('../database');
 const { authenticateToken } = require('../middleware/auth');
 
 const router = express.Router();
+
+router.get('/following/videos', authenticateToken, (req, res) => {
+  const { page = 1, limit = 20 } = req.query;
+  const offset = (page - 1) * limit;
+
+  const db = getDB();
+  try {
+    const followingIds = db.prepare(
+      'SELECT followee_id FROM follows WHERE follower_id = ?'
+    ).all(req.user.id).map(f => f.followee_id);
+
+    if (followingIds.length === 0) {
+      return res.json([]);
+    }
+
+    const sql = 'SELECT * FROM videos WHERE user_id IN (' + followingIds.map(() => '?').join(',') + ') AND status = ? ORDER BY created_at DESC LIMIT ? OFFSET ?';
+    const videos = db.prepare(sql).all(...followingIds, 'approved', parseInt(limit), offset);
+
+    const result = videos.map(video => {
+      const user = db.prepare('SELECT id, username, nickname, cover FROM users WHERE id = ?').get(video.user_id);
+      return { ...video, userId: video.user_id, username: user.username, nickname: user.nickname, user_cover: user.cover };
+    });
+
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: '服务器错误' });
+  }
+});
+
+router.get('/', (req, res) => {
+  const { keyword, page = 1, limit = 20 } = req.query;
+  const offset = (page - 1) * limit;
+
+  let query = 'SELECT id, username, nickname, phone, cover, level, is_host FROM users WHERE status = ?';
+  const params = ['active'];
+
+  if (keyword) {
+    query = 'SELECT id, username, nickname, phone, cover, level, is_host FROM users WHERE status = ? AND (username LIKE ? OR nickname LIKE ? OR phone LIKE ?)';
+    params.push(`%${keyword}%`, `%${keyword}%`, `%${keyword}%`);
+  }
+
+  query += ' ORDER BY created_at DESC LIMIT ? OFFSET ?';
+  params.push(parseInt(limit), offset);
+
+  const db = getDB();
+  try {
+    const users = db.prepare(query).all(...params);
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ error: '服务器错误' });
+  }
+});
 
 router.get('/:userId', (req, res) => {
   const { userId } = req.params;
@@ -16,30 +68,6 @@ router.get('/:userId', (req, res) => {
     }
     delete user.password;
     res.json(user);
-  } catch (err) {
-    res.status(500).json({ error: '服务器错误' });
-  }
-});
-
-router.get('/', (req, res) => {
-  const { keyword, page = 1, limit = 20 } = req.query;
-  const offset = (page - 1) * limit;
-
-  let query = 'SELECT id, username, nickname, phone, avatar, level, is_host FROM users WHERE status = ?';
-  const params = ['active'];
-
-  if (keyword) {
-    query = 'SELECT id, username, nickname, phone, avatar, level, is_host FROM users WHERE status = ? AND (username LIKE ? OR nickname LIKE ? OR phone LIKE ?)';
-    params.push(`%${keyword}%`, `%${keyword}%`, `%${keyword}%`);
-  }
-
-  query += ' ORDER BY created_at DESC LIMIT ? OFFSET ?';
-  params.push(parseInt(limit), offset);
-
-  const db = getDB();
-  try {
-    const users = db.prepare(query).all(...params);
-    res.json(users);
   } catch (err) {
     res.status(500).json({ error: '服务器错误' });
   }
@@ -155,7 +183,7 @@ router.get('/:userId/contribution', authenticateToken, (req, res) => {
     ).all(userId);
 
     const result = giftRecords.map(record => {
-      const user = db.prepare('SELECT id, username, nickname, avatar FROM users WHERE id = ?').get(record.user_id);
+      const user = db.prepare('SELECT id, username, nickname, cover FROM users WHERE id = ?').get(record.user_id);
       return { ...record, ...user, rank: 0 };
     }).map((record, index) => ({ ...record, rank: index + 1 }));
 
@@ -165,30 +193,28 @@ router.get('/:userId/contribution', authenticateToken, (req, res) => {
   }
 });
 
-router.get('/following/videos', authenticateToken, (req, res) => {
-  const { page = 1, limit = 20 } = req.query;
-  const offset = (page - 1) * limit;
+router.get('/:userId/following/details', (req, res) => {
+  const { userId } = req.params;
 
   const db = getDB();
   try {
     const followingIds = db.prepare(
       'SELECT followee_id FROM follows WHERE follower_id = ?'
-    ).all(req.user.id).map(f => f.followee_id);
+    ).all(userId).map(f => f.followee_id);
 
     if (followingIds.length === 0) {
-      return res.json([]);
+      return res.json({ followingHosts: [], followingVideos: [] });
     }
 
+    const hosts = db.prepare(
+      'SELECT u.id, u.username, u.nickname, u.cover FROM users u WHERE u.id IN (' + followingIds.map(() => '?').join(',') + ')'
+    ).all(...followingIds);
+
     const videos = db.prepare(
-      'SELECT * FROM videos WHERE user_id IN (' + followingIds.map(() => '?').join(',') + ') AND status = ? ORDER BY created_at DESC LIMIT ? OFFSET ?'
-    ).all(...followingIds, 'approved', parseInt(limit), offset);
+      'SELECT v.id, v.title, v.cover, u.nickname as host_nickname FROM videos v JOIN users u ON v.user_id = u.id WHERE v.user_id IN (' + followingIds.map(() => '?').join(',') + ') AND v.status = ? ORDER BY v.created_at DESC'
+    ).all(...followingIds, 'approved');
 
-    const result = videos.map(video => {
-      const user = db.prepare('SELECT id, username, nickname, avatar FROM users WHERE id = ?').get(video.user_id);
-      return { ...video, userId: video.user_id, ...user };
-    });
-
-    res.json(result);
+    res.json({ followingHosts: hosts, followingVideos: videos });
   } catch (err) {
     res.status(500).json({ error: '服务器错误' });
   }

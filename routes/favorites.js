@@ -62,7 +62,7 @@ router.get('/videos', authenticateToken, (req, res) => {
     ).all(...favoriteIds, 'approved', parseInt(limit), offset);
 
     const result = videos.map(video => {
-      const user = db.prepare('SELECT id, username, nickname, avatar FROM users WHERE id = ?').get(video.user_id);
+      const user = db.prepare('SELECT id, username, nickname, cover FROM users WHERE id = ?').get(video.user_id);
       return { ...video, userId: video.user_id, ...user };
     });
 

@@ -82,6 +82,7 @@ class FileDatabase {
     this.createTable('articles');
     this.createTable('id_certifications');
     this.createTable('level_configs');
+    this.createTable('configs');
 
     const now = new Date().toISOString().replace('T', ' ').substring(0, 19);
 
@@ -147,6 +148,9 @@ class FileDatabase {
       { id: 4, follower_id: 5, followee_id: 2, created_at: now },
       { id: 5, follower_id: 5, followee_id: 3, created_at: now },
       { id: 6, follower_id: 6, followee_id: 1, created_at: now },
+      { id: 7, follower_id: 1, followee_id: 2, created_at: now },
+      { id: 8, follower_id: 1, followee_id: 7, created_at: now },
+      { id: 9, follower_id: 1, followee_id: 8, created_at: now },
     ];
 
     this.tables['transactions'] = [
@@ -191,8 +195,8 @@ class FileDatabase {
       { id: 1, user_id: 1, title: '经典歌曲翻唱合集', description: '精选热门歌曲翻唱', cover: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=beautiful%20female%20singer%20music%20video&image_size=portrait_16_9', duration: 180, views: 5200, likes: 1280, comments: 256, shares: 156, status: 'approved', created_at: now },
       { id: 2, user_id: 2, title: '王者荣耀操作集锦', description: '精彩操作瞬间', cover: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mobile%20game%20esports%20highlight&image_size=portrait_16_9', duration: 120, views: 8900, likes: 2100, comments: 420, shares: 320, status: 'approved', created_at: now },
       { id: 3, user_id: 3, title: '云南大理美景vlog', description: '带你看遍大理风光', cover: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=beautiful%20travel%20vlog%20landscape&image_size=portrait_16_9', duration: 300, views: 3400, likes: 890, comments: 180, shares: 95, status: 'approved', created_at: now },
-      { id: 4, user_id: 7, title: '红烧肉制作教程', description: '手把手教你做红烧肉', cover: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=chinese%20food%20cooking%20tutorial&image_size=portrait_16_9', duration: 240, views: 6200, likes: 1560, comments: 320, shares: 280, status: 'pending', created_at: now },
-      { id: 5, user_id: 8, title: '搞笑脱口秀精选', description: '经典段子合集', cover: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=standup%20comedy%20funny%20show&image_size=portrait_16_9', duration: 150, views: 4500, likes: 980, comments: 210, shares: 165, status: 'rejected', created_at: now },
+      { id: 4, user_id: 7, title: '红烧肉制作教程', description: '手把手教你做红烧肉', cover: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=chinese%20food%20cooking%20tutorial&image_size=portrait_16_9', duration: 240, views: 6200, likes: 1560, comments: 320, shares: 280, status: 'approved', created_at: now },
+      { id: 5, user_id: 8, title: '搞笑脱口秀精选', description: '经典段子合集', cover: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=standup%20comedy%20funny%20show&image_size=portrait_16_9', duration: 150, views: 4500, likes: 980, comments: 210, shares: 165, status: 'approved', created_at: now },
     ];
 
     this.tables['notifications'] = [
@@ -243,26 +247,31 @@ class FileDatabase {
     ];
 
     this.tables['level_configs'] = [
-      { id: 1, type: 'user', level: 1, min_exp: 0, max_exp: 100, name: 'LV.1 新手', icon: '🌱', benefits: '基础功能权限', created_at: now },
-      { id: 2, type: 'user', level: 2, min_exp: 100, max_exp: 300, name: 'LV.2 普通', icon: '⭐', benefits: '解锁高级弹幕', created_at: now },
-      { id: 3, type: 'user', level: 3, min_exp: 300, max_exp: 600, name: 'LV.3 活跃', icon: '🌟', benefits: '专属头像框', created_at: now },
-      { id: 4, type: 'user', level: 4, min_exp: 600, max_exp: 1000, name: 'LV.4 达人', icon: '💫', benefits: '直播间优先进入', created_at: now },
-      { id: 5, type: 'user', level: 5, min_exp: 1000, max_exp: 1500, name: 'LV.5 精英', icon: '💎', benefits: '免费礼物领取', created_at: now },
-      { id: 6, type: 'user', level: 6, min_exp: 1500, max_exp: 2500, name: 'LV.6 大师', icon: '👑', benefits: '专属客服', created_at: now },
-      { id: 7, type: 'user', level: 7, min_exp: 2500, max_exp: 4000, name: 'LV.7 王者', icon: '🏆', benefits: '全站排名展示', created_at: now },
-      { id: 8, type: 'user', level: 8, min_exp: 4000, max_exp: 6000, name: 'LV.8 传奇', icon: '🔥', benefits: '自定义房间', created_at: now },
-      { id: 9, type: 'user', level: 9, min_exp: 6000, max_exp: 10000, name: 'LV.9 至尊', icon: '⚡', benefits: '专属徽章', created_at: now },
-      { id: 10, type: 'user', level: 10, min_exp: 10000, max_exp: 9999999, name: 'LV.10 VIP', icon: '💠', benefits: '全部特权', created_at: now },
-      { id: 11, type: 'host', level: 1, min_exp: 0, max_exp: 500, name: 'LV.1 新手主播', icon: '🎤', benefits: '基础直播权限', created_at: now },
-      { id: 12, type: 'host', level: 2, min_exp: 500, max_exp: 1500, name: 'LV.2 普通主播', icon: '🎵', benefits: '礼物分成50%', created_at: now },
-      { id: 13, type: 'host', level: 3, min_exp: 1500, max_exp: 3500, name: 'LV.3 人气主播', icon: '🎶', benefits: '礼物分成55%', created_at: now },
-      { id: 14, type: 'host', level: 4, min_exp: 3500, max_exp: 6500, name: 'LV.4 明星主播', icon: '⭐', benefits: '礼物分成60%', created_at: now },
-      { id: 15, type: 'host', level: 5, min_exp: 6500, max_exp: 10000, name: 'LV.5 金牌主播', icon: '🌟', benefits: '礼物分成65%', created_at: now },
-      { id: 16, type: 'host', level: 6, min_exp: 10000, max_exp: 15000, name: 'LV.6 钻石主播', icon: '💎', benefits: '礼物分成70%', created_at: now },
-      { id: 17, type: 'host', level: 7, min_exp: 15000, max_exp: 25000, name: 'LV.7 皇冠主播', icon: '👑', benefits: '礼物分成75%', created_at: now },
-      { id: 18, type: 'host', level: 8, min_exp: 25000, max_exp: 40000, name: 'LV.8 殿堂主播', icon: '🏆', benefits: '礼物分成80%', created_at: now },
-      { id: 19, type: 'host', level: 9, min_exp: 40000, max_exp: 60000, name: 'LV.9 传奇主播', icon: '🔥', benefits: '专属推荐位', created_at: now },
-      { id: 20, type: 'host', level: 10, min_exp: 60000, max_exp: 9999999, name: 'LV.10 至尊主播', icon: '⚡', benefits: '全部特权', created_at: now },
+      { id: 1, type: 'user', level: 1, min_exp: 0, max_exp: 100, name: 'LV.1 新手', icon: '🌱', color: '#9ca3af', benefits: '基础功能权限', created_at: now },
+      { id: 2, type: 'user', level: 2, min_exp: 100, max_exp: 300, name: 'LV.2 普通', icon: '⭐', color: '#60a5fa', benefits: '解锁高级弹幕', created_at: now },
+      { id: 3, type: 'user', level: 3, min_exp: 300, max_exp: 600, name: 'LV.3 活跃', icon: '🌟', color: '#34d399', benefits: '专属头像框', created_at: now },
+      { id: 4, type: 'user', level: 4, min_exp: 600, max_exp: 1000, name: 'LV.4 达人', icon: '💫', color: '#a78bfa', benefits: '直播间优先进入', created_at: now },
+      { id: 5, type: 'user', level: 5, min_exp: 1000, max_exp: 1500, name: 'LV.5 精英', icon: '💎', color: '#fbbf24', benefits: '免费礼物领取', created_at: now },
+      { id: 6, type: 'user', level: 6, min_exp: 1500, max_exp: 2500, name: 'LV.6 大师', icon: '👑', color: '#f87171', benefits: '专属客服', created_at: now },
+      { id: 7, type: 'user', level: 7, min_exp: 2500, max_exp: 4000, name: 'LV.7 王者', icon: '🏆', color: '#ec4899', benefits: '全站排名展示', created_at: now },
+      { id: 8, type: 'user', level: 8, min_exp: 4000, max_exp: 6000, name: 'LV.8 传奇', icon: '🔥', color: '#22d3ee', benefits: '自定义房间', created_at: now },
+      { id: 9, type: 'user', level: 9, min_exp: 6000, max_exp: 10000, name: 'LV.9 至尊', icon: '⚡', color: '#8b5cf6', benefits: '专属徽章', created_at: now },
+      { id: 10, type: 'user', level: 10, min_exp: 10000, max_exp: 9999999, name: 'LV.10 VIP', icon: '💠', color: '#f59e0b', benefits: '全部特权', created_at: now },
+      { id: 11, type: 'host', level: 1, min_exp: 0, max_exp: 500, name: 'LV.1 新手主播', icon: '🎤', color: '#9ca3af', benefits: '基础直播权限', created_at: now },
+      { id: 12, type: 'host', level: 2, min_exp: 500, max_exp: 1500, name: 'LV.2 普通主播', icon: '🎵', color: '#a78bfa', benefits: '礼物分成50%', created_at: now },
+      { id: 13, type: 'host', level: 3, min_exp: 1500, max_exp: 3500, name: 'LV.3 人气主播', icon: '🎶', color: '#ec4899', benefits: '礼物分成55%', created_at: now },
+      { id: 14, type: 'host', level: 4, min_exp: 3500, max_exp: 6500, name: 'LV.4 明星主播', icon: '⭐', color: '#fbbf24', benefits: '礼物分成60%', created_at: now },
+      { id: 15, type: 'host', level: 5, min_exp: 6500, max_exp: 10000, name: 'LV.5 金牌主播', icon: '🌟', color: '#34d399', benefits: '礼物分成65%', created_at: now },
+      { id: 16, type: 'host', level: 6, min_exp: 10000, max_exp: 15000, name: 'LV.6 钻石主播', icon: '💎', color: '#22d3ee', benefits: '礼物分成70%', created_at: now },
+      { id: 17, type: 'host', level: 7, min_exp: 15000, max_exp: 25000, name: 'LV.7 皇冠主播', icon: '👑', color: '#8b5cf6', benefits: '礼物分成75%', created_at: now },
+      { id: 18, type: 'host', level: 8, min_exp: 25000, max_exp: 40000, name: 'LV.8 殿堂主播', icon: '🏆', color: '#f87171', benefits: '礼物分成80%', created_at: now },
+      { id: 19, type: 'host', level: 9, min_exp: 40000, max_exp: 60000, name: 'LV.9 传奇主播', icon: '🔥', color: '#f59e0b', benefits: '专属推荐位', created_at: now },
+      { id: 20, type: 'host', level: 10, min_exp: 60000, max_exp: 9999999, name: 'LV.10 至尊主播', icon: '⚡', color: '#d946ef', benefits: '全部特权', created_at: now },
+    ];
+
+    this.tables['configs'] = [
+      { id: 1, key: 'defaultCoins', value: '100', description: '新用户初始金币', created_at: now },
+      { id: 2, key: 'defaultDiamonds', value: '0', description: '新用户初始钻石', created_at: now },
     ];
 
     this.autoIncrement = {
@@ -272,7 +281,7 @@ class FileDatabase {
       gifts: 11,
       gift_records: 8,
       messages: 7,
-      follows: 7,
+      follows: 9,
       video_favorites: 6,
       transactions: 9,
       banners: 5,
@@ -286,6 +295,7 @@ class FileDatabase {
       articles: 6,
       id_certifications: 5,
       level_configs: 21,
+      configs: 3,
     };
 
     this.save();
@@ -297,6 +307,60 @@ class PreparedStatement {
   constructor(sql, db) {
     this.sql = sql.trim();
     this.db = db;
+  }
+
+  evaluateExpression(expr, row, key) {
+    expr = expr.trim();
+    console.log('[DEBUG] evaluateExpression:', expr, 'row[key]:', row[key]);
+    
+    const maxMatch = expr.match(/^MAX\s*\(\s*([^,]+)\s*,\s*([^)]+)\s*\)$/i);
+    if (maxMatch) {
+      console.log('[DEBUG] MAX match:', maxMatch[1], maxMatch[2]);
+      const val1 = this.evaluateSimpleExpression(maxMatch[1], row, key);
+      const val2 = this.evaluateSimpleExpression(maxMatch[2], row, key);
+      console.log('[DEBUG] MAX values:', val1, val2);
+      return Math.max(val1, val2);
+    }
+    
+    const minMatch = expr.match(/^MIN\s*\(\s*([^,]+)\s*,\s*([^)]+)\s*\)$/i);
+    if (minMatch) {
+      const val1 = this.evaluateSimpleExpression(minMatch[1], row, key);
+      const val2 = this.evaluateSimpleExpression(minMatch[2], row, key);
+      return Math.min(val1, val2);
+    }
+    
+    return this.evaluateSimpleExpression(expr, row, key);
+  }
+
+  evaluateSimpleExpression(expr, row, key) {
+    expr = expr.trim();
+    
+    const colMatch = expr.match(/^([a-zA-Z_]\w*)\s*([+\-*/])\s*(\d+)$/);
+    if (colMatch) {
+      const colName = colMatch[1];
+      const op = colMatch[2];
+      const num = parseInt(colMatch[3]);
+      const val = row[colName] !== undefined ? row[colName] : (colName === key ? 0 : 0);
+      
+      switch (op) {
+        case '+': return val + num;
+        case '-': return val - num;
+        case '*': return val * num;
+        case '/': return val / num;
+        default: return val;
+      }
+    }
+    
+    const numMatch = expr.match(/^\d+$/);
+    if (numMatch) {
+      return parseInt(expr);
+    }
+    
+    if (row[expr] !== undefined) {
+      return row[expr];
+    }
+    
+    return row[key] || 0;
   }
 
   parseSQL() {
@@ -313,9 +377,9 @@ class PreparedStatement {
     let joinOn = null;
     let aggregates = [];
 
-    if (sql.startsWith('INSERT INTO')) {
+    if (sql.startsWith('INSERT')) {
       action = 'INSERT';
-      const match = sql.match(/INSERT INTO (\w+)\s*\(([^)]+)\)\s*VALUES\s*\(([^)]+)\)/i);
+      const match = sql.match(/INSERT\s+(?:OR\s+IGNORE\s+)?INTO\s+(\w+)\s*\(([^)]+)\)\s*VALUES\s*\(([^)]+)\)/i);
       if (match) {
         tableName = match[1];
         columns = match[2].split(',').map(c => c.trim());
@@ -327,12 +391,30 @@ class PreparedStatement {
       const match = sql.match(/UPDATE (\w+)\s*SET\s*([\s\S]*?)(?:WHERE\s*(.+))?$/i);
       if (match) {
         tableName = match[1];
-        const setParts = match[2].split(',').map(p => p.trim()).filter(p => p);
+        const setParts = [];
+        let currentPart = '';
+        let parenCount = 0;
+        for (let i = 0; i < match[2].length; i++) {
+          const char = match[2][i];
+          if (char === '(') parenCount++;
+          if (char === ')') parenCount--;
+          if (char === ',' && parenCount === 0) {
+            setParts.push(currentPart.trim());
+            currentPart = '';
+          } else {
+            currentPart += char;
+          }
+        }
+        if (currentPart.trim()) {
+          setParts.push(currentPart.trim());
+        }
         setParts.forEach(part => {
-          const [key, value] = part.split('=').map(p => p.trim());
+          const eqIdx = part.indexOf('=');
+          const key = part.substring(0, eqIdx).trim();
+          const value = part.substring(eqIdx + 1).trim();
           if (value === '?') {
             columns.push({ key, value: null });
-          } else if (value.includes('?')) {
+          } else if (value.includes('?') || value.includes('(') || value.toUpperCase().includes('MAX') || value.toUpperCase().includes('MIN') || value.toUpperCase().includes('SUM') || value.toUpperCase().includes('COUNT') || value.match(/[a-zA-Z_]\w*\s*[+\-*/]/)) {
             columns.push({ key, value, isExpression: true });
           } else {
             columns.push({ key, value: value.replace(/['"]/g, '') });
@@ -344,7 +426,7 @@ class PreparedStatement {
       }
     } else if (sql.startsWith('DELETE')) {
       action = 'DELETE';
-      const match = sql.match(/DELETE FROM (\w+)(?:WHERE\s*(.+))?/i);
+      const match = sql.match(/DELETE FROM (\w+)\s*(?:WHERE\s*(.+))?/i);
       if (match) {
         tableName = match[1];
         if (match[2]) {
@@ -430,7 +512,7 @@ class PreparedStatement {
       let changes = 0;
       let paramIdx = paramIndex;
       
-      const setParamCount = parsed.columns.filter(col => col.value === null || col.isExpression).length;
+      const setParamCount = parsed.columns.filter(col => col.value === null || (col.isExpression && col.value.includes('?'))).length;
       
       this.db.tables[parsed.tableName].forEach(row => {
         const whereIdx = paramIdx + setParamCount;
@@ -442,7 +524,7 @@ class PreparedStatement {
               row[col.key] = params[idx++];
             } else if (col.isExpression) {
               const expr = col.value.replace(/\?/g, () => params[idx++]);
-              row[col.key] = eval(expr.replace(col.key, row[col.key]));
+              row[col.key] = this.evaluateExpression(expr, row, col.key);
             } else {
               row[col.key] = col.value;
             }
@@ -454,10 +536,15 @@ class PreparedStatement {
       return { changes };
     } else if (parsed.action === 'DELETE') {
       const initialLength = this.db.tables[parsed.tableName].length;
-      this.db.tables[parsed.tableName] = this.db.tables[parsed.tableName].filter(row => {
+      const filtered = [];
+      for (let i = 0; i < this.db.tables[parsed.tableName].length; i++) {
+        const row = this.db.tables[parsed.tableName][i];
         const { match } = this.matchWhere(row, parsed.whereClause, params, paramIndex);
-        return !match;
-      });
+        if (!match) {
+          filtered.push(row);
+        }
+      }
+      this.db.tables[parsed.tableName] = filtered;
       this.db.save();
       return { changes: initialLength - this.db.tables[parsed.tableName].length };
     }
@@ -558,7 +645,7 @@ class PreparedStatement {
           newRow[alias] = row[actualCol] !== undefined ? row[actualCol] : 0;
         } else {
           const actualCol = col.split('.')[1] || col;
-          newRow[actualCol] = row[actualCol] !== undefined ? row[actualCol] : 0;
+          newRow[actualCol] = row[actualCol] !== undefined ? row[actualCol] : '';
         }
       });
       return newRow;
@@ -584,6 +671,9 @@ class PreparedStatement {
       if (clause.includes('LIKE')) {
         parts = clause.split('LIKE');
         op = 'LIKE';
+      } else if (clause.includes('IN')) {
+        parts = clause.split('IN');
+        op = 'IN';
       } else if (clause.includes('!=')) {
         parts = clause.split('!=');
         op = '!=';
@@ -597,7 +687,15 @@ class PreparedStatement {
       const value = parts[1].trim();
       
       let compareValue;
-      if (value === '?') {
+      if (op === 'IN') {
+        const placeholderMatch = value.match(/\(\s*(.+?)\s*\)/);
+        if (placeholderMatch) {
+          const placeholders = placeholderMatch[1].split(',').map(p => p.trim()).filter(p => p === '?');
+          compareValue = placeholders.map(() => params[idx++]);
+        } else {
+          compareValue = [];
+        }
+      } else if (value === '?') {
         compareValue = params[idx++];
       } else {
         compareValue = value.replace(/['"]/g, '');
@@ -608,6 +706,8 @@ class PreparedStatement {
       if (op === 'LIKE') {
         const pattern = compareValue.replace(/%/g, '.*');
         match = match && new RegExp(pattern, 'i').test(String(rowValue));
+      } else if (op === 'IN') {
+        match = match && compareValue.some(v => String(rowValue) === String(v));
       } else if (op === '!=') {
         match = match && String(rowValue) !== String(compareValue);
       } else {

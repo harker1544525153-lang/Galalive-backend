@@ -126,7 +126,7 @@ router.get('/users/:userId', authenticateAdmin, (req, res) => {
 
 router.put('/users/:userId', authenticateAdmin, (req, res) => {
   const { userId } = req.params;
-  const { status, is_host, host_status, nickname, phone, level, host_level, coins, diamonds, gender, address, signature, avatar } = req.body;
+  const { status, is_host, host_status, nickname, phone, level, host_level, coins, diamonds, gender, address, signature, cover } = req.body;
 
   const db = getDB();
   try {
@@ -159,7 +159,7 @@ router.put('/users/:userId', authenticateAdmin, (req, res) => {
     if (gender !== undefined) { updateFields.push('gender = ?'); updateParams.push(gender); }
     if (address !== undefined) { updateFields.push('address = ?'); updateParams.push(address); }
     if (signature !== undefined) { updateFields.push('signature = ?'); updateParams.push(signature); }
-    if (avatar !== undefined) { updateFields.push('avatar = ?'); updateParams.push(avatar); }
+    if (cover !== undefined) { updateFields.push('cover = ?'); updateParams.push(cover); }
 
     updateFields.push('updated_at = CURRENT_TIMESTAMP');
     updateParams.push(userId);

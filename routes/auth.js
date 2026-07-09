@@ -69,9 +69,13 @@ router.post('/register', (req, res) => {
 
       try {
         const now = new Date().toISOString().replace('T', ' ').substring(0, 19);
+        
+        const config = db.prepare('SELECT * FROM configs WHERE key = ?').get('defaultCoins');
+        const defaultCoins = config ? parseInt(config.value) : 100;
+        
         const result = db.prepare(
-          'INSERT INTO users (username, password, phone, nickname, created_at) VALUES (?, ?, ?, ?, ?)'
-        ).run(phone, hash, phone, nickname, now);
+          'INSERT INTO users (username, password, phone, nickname, coins, diamonds, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)'
+        ).run(phone, hash, phone, nickname, defaultCoins, 0, now);
 
         const token = jwt.sign({ id: result.lastInsertRowid, username: phone }, process.env.JWT_SECRET, { expiresIn: '24h' });
         res.json({
@@ -85,14 +89,15 @@ router.post('/register', (req, res) => {
             gender: 'unknown',
             signature: '',
             address: '',
-            avatar: null,
+            cover: null,
             level: 0,
             host_level: 0,
             diamonds: 0,
-            coins: 0,
+            coins: defaultCoins,
             is_host: 0,
             created_at: now
-          }
+          },
+          showReward: defaultCoins > 0
         });
       } catch (error) {
         res.status(400).json({ error: '注册失败，请稍后重试' });
@@ -141,7 +146,7 @@ router.post('/login', (req, res) => {
           id: user.id,
           username: user.username,
           nickname: user.nickname,
-          avatar: user.avatar,
+          cover: user.cover,
           level: user.level,
           diamonds: user.diamonds,
           coins: user.coins,
@@ -166,7 +171,7 @@ router.post('/login', (req, res) => {
             id: user.id,
             username: user.username,
             nickname: user.nickname,
-            avatar: user.avatar,
+            cover: user.cover,
             level: user.level,
             diamonds: user.diamonds,
             coins: user.coins,
@@ -199,7 +204,7 @@ router.get('/profile', authenticateToken, (req, res) => {
 });
 
 router.put('/profile', authenticateToken, (req, res) => {
-  const { nickname, gender, signature, address, avatar, cover } = req.body;
+  const { nickname, gender, signature, address, cover } = req.body;
 
   const db = getDB();
   try {
@@ -211,8 +216,8 @@ router.put('/profile', authenticateToken, (req, res) => {
     }
 
     db.prepare(
-      'UPDATE users SET nickname = ?, gender = ?, signature = ?, address = ?, avatar = ?, cover = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?'
-    ).run(nickname, gender, signature, address, avatar, cover, req.user.id);
+      'UPDATE users SET nickname = ?, gender = ?, signature = ?, address = ?, cover = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?'
+    ).run(nickname, gender, signature, address, cover, req.user.id);
 
     res.json({ message: '个人资料更新成功' });
   } catch (error) {

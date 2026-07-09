@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
     streams = streams.slice(offset, offset + parseInt(limit));
 
     streams = streams.map(stream => {
-      const user = db.prepare('SELECT username, nickname, phone, avatar, level, is_host FROM users WHERE id = ?').get(stream.host_id);
+      const user = db.prepare('SELECT username, nickname, phone, cover, level, is_host FROM users WHERE id = ?').get(stream.host_id);
       return { ...stream, ...user };
     });
 
@@ -60,7 +60,7 @@ router.get('/following', authenticateToken, (req, res) => {
     }
 
     const followingUsers = db.prepare(
-      'SELECT id, username, nickname, avatar, level, is_host FROM users WHERE id IN (' + followingIds.map(() => '?').join(',') + ')'
+      'SELECT id, username, nickname, cover, level, is_host FROM users WHERE id IN (' + followingIds.map(() => '?').join(',') + ')'
     ).all(...followingIds);
 
     const liveStreams = db.prepare(
@@ -75,13 +75,18 @@ router.get('/following', authenticateToken, (req, res) => {
     const result = followingUsers.map(user => {
       const stream = hostStreamMap[user.id];
       if (stream) {
-        return { ...stream, ...user };
+        return { 
+          ...stream, 
+          ...user,
+          user_cover: user.cover,
+          stream_cover: stream.cover
+        };
       }
       return {
         ...user,
         room_id: null,
         title: '暂无直播',
-        cover: '',
+        cover: user.cover,
         category: '',
         status: 'offline',
         viewers_count: 0,
@@ -117,7 +122,7 @@ router.get('/:roomId', (req, res) => {
       return res.status(404).json({ error: '直播间不存在' });
     }
 
-    const user = db.prepare('SELECT username, nickname, phone, avatar, level, is_host FROM users WHERE id = ?').get(stream.host_id);
+    const user = db.prepare('SELECT username, nickname, phone, cover, level, is_host FROM users WHERE id = ?').get(stream.host_id);
     res.json({ ...stream, ...user });
   } catch (err) {
     res.status(500).json({ error: '服务器错误' });
@@ -229,7 +234,7 @@ router.get('/:roomId/viewers', (req, res) => {
   const db = getDB();
   try {
     const viewers = db.prepare(
-      'SELECT u.id, u.username, u.nickname, u.avatar, u.level FROM stream_viewers sv JOIN users u ON sv.user_id = u.id JOIN streams s ON sv.stream_id = s.id WHERE s.room_id = ? AND sv.left_at IS NULL'
+      'SELECT u.id, u.username, u.nickname, u.cover, u.level FROM stream_viewers sv JOIN users u ON sv.user_id = u.id JOIN streams s ON sv.stream_id = s.id WHERE s.room_id = ? AND sv.left_at IS NULL'
     ).all(roomId);
 
     res.json(viewers);

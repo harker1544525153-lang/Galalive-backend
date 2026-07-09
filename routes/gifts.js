@@ -73,7 +73,7 @@ router.post('/send', authenticateToken, (req, res) => {
     res.json({
       message: '礼物发送成功',
       gift: { ...gift, count, totalPrice },
-      sender: { id: req.user.id, username: user.username, nickname: user.nickname, avatar: user.avatar }
+      sender: { id: req.user.id, username: user.username, nickname: user.nickname, cover: user.cover }
     });
   } catch (error) {
     res.status(500).json({ error: '发送礼物失败' });
@@ -88,7 +88,7 @@ router.get('/:roomId/records', (req, res) => {
   const db = getDB();
   try {
     const records = db.prepare(
-      `SELECT gr.*, g.name, g.icon, g.price, u.username AS sender_username, u.nickname AS sender_nickname, u.avatar AS sender_avatar
+      `SELECT gr.*, g.name, g.icon, g.price, u.username AS sender_username, u.nickname AS sender_nickname, u.cover AS sender_cover
        FROM gift_records gr
        JOIN gifts g ON gr.gift_id = g.id
        JOIN users u ON gr.sender_id = u.id
@@ -110,7 +110,7 @@ router.get('/:roomId/ranking', (req, res) => {
   const db = getDB();
   try {
     const ranking = db.prepare(
-      `SELECT u.id, u.username, u.nickname, u.avatar, SUM(gr.total_price) AS total_contribution
+      `SELECT u.id, u.username, u.nickname, u.cover, SUM(gr.total_price) AS total_contribution
        FROM gift_records gr
        JOIN users u ON gr.sender_id = u.id
        JOIN streams s ON gr.stream_id = s.id

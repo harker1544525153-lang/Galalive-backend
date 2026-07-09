@@ -4,32 +4,36 @@
       {
         "id": 1,
         "username": "host1",
-        "password": "$2a$10$C/91Ok7PDbQeY/VwiuIxXeEZmjlEkm4PPcYBU8hXXPUxQtAa9TuZm",
+        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
         "phone": "13800138001",
         "nickname": "才艺主播小美",
         "is_host": 1,
         "host_status": "approved",
         "level": 10,
         "host_level": 5,
+        "exp": 2500,
+        "host_exp": 3500,
         "coins": 10000,
-        "diamonds": 5100,
+        "diamonds": 5000,
         "status": "active",
         "signature": "唱歌跳舞样样精通~",
         "gender": "female",
         "address": "北京",
         "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=beautiful%20female%20singer%20stage%20purple%20pink%20gradient%20background%20live%20streaming&image_size=landscape_16_9",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
         "username": "host2",
-        "password": "$2a$10$C/91Ok7PDbQeY/VwiuIxXeEZmjlEkm4PPcYBU8hXXPUxQtAa9TuZm",
+        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
         "phone": "13800138002",
         "nickname": "游戏大神阿杰",
         "is_host": 1,
         "host_status": "approved",
         "level": 15,
         "host_level": 8,
+        "exp": 8000,
+        "host_exp": 12000,
         "coins": 25000,
         "diamonds": 12000,
         "status": "active",
@@ -37,18 +41,20 @@
         "gender": "male",
         "address": "上海",
         "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=gaming%20esports%20neon%20lights%20blue%20purple%20gradient%20cyber%20background&image_size=landscape_16_9",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
         "username": "host3",
-        "password": "$2a$10$C/91Ok7PDbQeY/VwiuIxXeEZmjlEkm4PPcYBU8hXXPUxQtAa9TuZm",
+        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
         "phone": "13800138003",
         "nickname": "户外探险家",
         "is_host": 1,
         "host_status": "pending",
         "level": 8,
         "host_level": 3,
+        "exp": 1200,
+        "host_exp": 1800,
         "coins": 8000,
         "diamonds": 3000,
         "status": "active",
@@ -56,18 +62,20 @@
         "gender": "male",
         "address": "深圳",
         "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=beautiful%20outdoor%20nature%20landscape%20mountains%20sunset%20travel%20adventure&image_size=landscape_16_9",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
         "username": "user1",
-        "password": "$2a$10$C/91Ok7PDbQeY/VwiuIxXeEZmjlEkm4PPcYBU8hXXPUxQtAa9TuZm",
+        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
         "phone": "13800138004",
         "nickname": "快乐观众",
         "is_host": 0,
         "host_status": null,
         "level": 5,
         "host_level": 0,
+        "exp": 500,
+        "host_exp": 0,
         "coins": 500,
         "diamonds": 100,
         "status": "active",
@@ -75,18 +83,20 @@
         "gender": "female",
         "address": "广州",
         "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=happy%20social%20media%20colorful%20gradient%20abstract%20background%20pink%20orange&image_size=landscape_16_9",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
         "username": "user2",
-        "password": "$2a$10$C/91Ok7PDbQeY/VwiuIxXeEZmjlEkm4PPcYBU8hXXPUxQtAa9TuZm",
+        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
         "phone": "13800138005",
         "nickname": "土豪哥",
         "is_host": 0,
         "host_status": null,
         "level": 20,
         "host_level": 0,
+        "exp": 15000,
+        "host_exp": 0,
         "coins": 100000,
         "diamonds": 50000,
         "status": "active",
@@ -94,18 +104,20 @@
         "gender": "male",
         "address": "杭州",
         "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=luxury%20golden%20premium%20VIP%20elegant%20dark%20background%20sparkles&image_size=landscape_16_9",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 6,
         "username": "user3",
-        "password": "$2a$10$C/91Ok7PDbQeY/VwiuIxXeEZmjlEkm4PPcYBU8hXXPUxQtAa9TuZm",
+        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
         "phone": "13800138006",
         "nickname": "新人小白",
         "is_host": 0,
         "host_status": null,
         "level": 1,
         "host_level": 0,
+        "exp": 50,
+        "host_exp": 0,
         "coins": 100,
         "diamonds": 10,
         "status": "active",
@@ -113,18 +125,20 @@
         "gender": "male",
         "address": "成都",
         "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimalist%20simple%20blue%20gradient%20abstract%20background%20clean&image_size=landscape_16_9",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 7,
         "username": "host4",
-        "password": "$2a$10$C/91Ok7PDbQeY/VwiuIxXeEZmjlEkm4PPcYBU8hXXPUxQtAa9TuZm",
+        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
         "phone": "13800138007",
         "nickname": "美食达人小雨",
         "is_host": 1,
         "host_status": "approved",
         "level": 12,
         "host_level": 6,
+        "exp": 4500,
+        "host_exp": 6000,
         "coins": 18000,
         "diamonds": 8000,
         "status": "active",
@@ -132,18 +146,20 @@
         "gender": "female",
         "address": "重庆",
         "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=delicious%20food%20cooking%20warm%20orange%20yellow%20kitchen%20background&image_size=landscape_16_9",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 8,
         "username": "host5",
-        "password": "$2a$10$C/91Ok7PDbQeY/VwiuIxXeEZmjlEkm4PPcYBU8hXXPUxQtAa9TuZm",
+        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
         "phone": "13800138008",
         "nickname": "脱口秀小王",
         "is_host": 1,
         "host_status": "rejected",
         "level": 7,
         "host_level": 4,
+        "exp": 800,
+        "host_exp": 2500,
         "coins": 6000,
         "diamonds": 2500,
         "status": "active",
@@ -151,7 +167,7 @@
         "gender": "male",
         "address": "武汉",
         "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=comedy%20stage%20spotlight%20purple%20theater%20background%20funny&image_size=landscape_16_9",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "streams": [
@@ -164,14 +180,14 @@
         "category": "才艺",
         "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=beautiful%20female%20singer%20live%20concert%20stage&image_size=landscape_16_9",
         "status": "live",
-        "viewers_count": "viewers_count + 1",
+        "viewers_count": 520,
         "likes_count": 1280,
         "gifts_count": 350,
-        "start_time": "2026-07-08 13:42:35",
+        "start_time": "2026-07-09 07:11:20",
         "end_time": null,
         "is_private": 0,
         "private_password": null,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -182,14 +198,14 @@
         "category": "游戏",
         "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=gaming%20streamer%20playing%20mobile%20game%20esports&image_size=landscape_16_9",
         "status": "live",
-        "viewers_count": "viewers_count + 1",
+        "viewers_count": 890,
         "likes_count": 2100,
         "gifts_count": 580,
-        "start_time": "2026-07-08 13:42:35",
+        "start_time": "2026-07-09 07:11:20",
         "end_time": null,
         "is_private": 0,
         "private_password": null,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -200,14 +216,14 @@
         "category": "户外",
         "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=beautiful%20outdoor%20landscape%20travel%20vlog&image_size=landscape_16_9",
         "status": "live",
-        "viewers_count": "viewers_count + 1",
+        "viewers_count": 340,
         "likes_count": 890,
         "gifts_count": 180,
-        "start_time": "2026-07-08 13:42:35",
+        "start_time": "2026-07-09 07:11:20",
         "end_time": null,
         "is_private": 0,
         "private_password": null,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -221,11 +237,11 @@
         "viewers_count": 1200,
         "likes_count": 3500,
         "gifts_count": 890,
-        "start_time": "2026-07-08 13:42:35",
-        "end_time": "2026-07-08 13:42:35",
+        "start_time": "2026-07-09 07:11:20",
+        "end_time": "2026-07-09 07:11:20",
         "is_private": 0,
         "private_password": null,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
@@ -243,7 +259,7 @@
         "end_time": null,
         "is_private": 0,
         "private_password": null,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "stream_viewers": [],
@@ -254,7 +270,7 @@
         "icon": "🌸",
         "price": 10,
         "can_multiply": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -262,7 +278,7 @@
         "icon": "👏",
         "price": 20,
         "can_multiply": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -270,7 +286,7 @@
         "icon": "❤️",
         "price": 50,
         "can_multiply": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -278,7 +294,7 @@
         "icon": "🚀",
         "price": 100,
         "can_multiply": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
@@ -286,7 +302,7 @@
         "icon": "👑",
         "price": 500,
         "can_multiply": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 6,
@@ -294,7 +310,7 @@
         "icon": "🏎️",
         "price": 1000,
         "can_multiply": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 7,
@@ -302,7 +318,7 @@
         "icon": "⭐",
         "price": 5,
         "can_multiply": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 8,
@@ -310,7 +326,7 @@
         "icon": "🎂",
         "price": 80,
         "can_multiply": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 9,
@@ -318,7 +334,7 @@
         "icon": "💎",
         "price": 200,
         "can_multiply": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 10,
@@ -326,7 +342,7 @@
         "icon": "✈️",
         "price": 2000,
         "can_multiply": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "gift_records": [
@@ -336,7 +352,7 @@
         "user_id": 5,
         "gift_id": 5,
         "count": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -344,7 +360,7 @@
         "user_id": 5,
         "gift_id": 4,
         "count": 5,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -352,7 +368,7 @@
         "user_id": 5,
         "gift_id": 6,
         "count": 2,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -360,7 +376,7 @@
         "user_id": 4,
         "gift_id": 3,
         "count": 3,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
@@ -368,7 +384,7 @@
         "user_id": 4,
         "gift_id": 2,
         "count": 10,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 6,
@@ -376,7 +392,7 @@
         "user_id": 5,
         "gift_id": 9,
         "count": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 7,
@@ -384,7 +400,7 @@
         "user_id": 6,
         "gift_id": 1,
         "count": 20,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "messages": [
@@ -394,7 +410,7 @@
         "user_id": 4,
         "content": "主播唱得真好！",
         "type": "text",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -402,7 +418,7 @@
         "user_id": 5,
         "content": "刷个火箭支持一下",
         "type": "text",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -410,7 +426,7 @@
         "user_id": 4,
         "content": "666",
         "type": "text",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -418,7 +434,7 @@
         "user_id": 6,
         "content": "新人报道！",
         "type": "text",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
@@ -426,7 +442,7 @@
         "user_id": 5,
         "content": "这操作太秀了！",
         "type": "text",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 6,
@@ -434,7 +450,7 @@
         "user_id": 4,
         "content": "风景好美啊",
         "type": "text",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "follows": [
@@ -442,37 +458,59 @@
         "id": 1,
         "follower_id": 4,
         "followee_id": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
         "follower_id": 4,
         "followee_id": 2,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
         "follower_id": 5,
         "followee_id": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
         "follower_id": 5,
         "followee_id": 2,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
         "follower_id": 5,
         "followee_id": 3,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 6,
         "follower_id": 6,
         "followee_id": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
+      },
+      {
+        "id": 7,
+        "follower_id": 1,
+        "followee_id": 2,
+        "created_at": "2026-07-09 07:11:20"
+      },
+      {
+        "id": 8,
+        "follower_id": 1,
+        "followee_id": 7,
+        "created_at": "2026-07-09 07:11:20"
+      },
+      {
+        "follower_id": 1,
+        "followee_id": "8",
+        "id": 9
+      },
+      {
+        "follower_id": 1,
+        "followee_id": "3",
+        "id": 10
       }
     ],
     "video_favorites": [
@@ -480,31 +518,31 @@
         "id": 1,
         "user_id": 4,
         "video_id": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
         "user_id": 4,
         "video_id": 2,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
         "user_id": 5,
         "video_id": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
         "user_id": 5,
         "video_id": 2,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
         "user_id": 6,
         "video_id": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "transactions": [
@@ -515,7 +553,7 @@
         "amount": 100,
         "description": "充值100美元",
         "status": "completed",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -524,7 +562,7 @@
         "amount": 50,
         "description": "充值50美元",
         "status": "completed",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -533,7 +571,7 @@
         "amount": 5000,
         "description": "提现5000金币",
         "status": "pending",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -542,7 +580,7 @@
         "amount": 10000,
         "description": "提现10000金币",
         "status": "completed",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
@@ -551,7 +589,7 @@
         "amount": 10,
         "description": "充值10美元",
         "status": "completed",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 6,
@@ -560,7 +598,7 @@
         "amount": 200,
         "description": "充值200美元",
         "status": "completed",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 7,
@@ -569,7 +607,7 @@
         "amount": 8000,
         "description": "提现8000金币",
         "status": "rejected",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 8,
@@ -578,16 +616,7 @@
         "amount": 3000,
         "description": "提现3000金币",
         "status": "completed",
-        "created_at": "2026-07-08 13:42:35"
-      },
-      {
-        "user_id": 1,
-        "type": "recharge",
-        "amount": 10,
-        "balance_before": 0,
-        "balance_after": 100,
-        "description": "充值 10 USD",
-        "id": 9
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "banners": [
@@ -597,7 +626,7 @@
         "link": "/streams",
         "sort_order": 1,
         "is_active": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -605,7 +634,7 @@
         "link": "/profile",
         "sort_order": 2,
         "is_active": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -613,7 +642,7 @@
         "link": "/streams?category=game",
         "sort_order": 3,
         "is_active": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -621,7 +650,7 @@
         "link": "/streams?category=talent",
         "sort_order": 4,
         "is_active": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
@@ -629,7 +658,7 @@
         "link": "/streams?category=outdoor",
         "sort_order": 5,
         "is_active": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "categories": [
@@ -638,64 +667,64 @@
         "name": "才艺",
         "icon": "🎤",
         "sort_order": 1,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
         "name": "游戏",
         "icon": "🎮",
         "sort_order": 2,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
         "name": "聊天",
         "icon": "💬",
         "sort_order": 3,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
         "name": "娱乐",
         "icon": "🎭",
         "sort_order": 4,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
         "name": "户外",
         "icon": "🏕️",
         "sort_order": 5,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 6,
         "name": "美食",
         "icon": "🍔",
         "sort_order": 6,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 7,
         "name": "音乐",
         "icon": "🎵",
         "sort_order": 7,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 8,
         "name": "舞蹈",
         "icon": "💃",
         "sort_order": 8,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "admins": [
       {
         "id": 1,
         "username": "admin",
-        "password": "$2a$10$OwE1/dx8McYmKiuwSpeIhONkaFx3/Ci3.E7I2mj10sjQIERnNutnu",
-        "created_at": "2026-07-08 13:42:35"
+        "password": "$2a$10$nsX9KF/aPWLLdI1jSUa9euEUw1Z2yyfI4kGnnXEeVbEP8JcfqsTP6",
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "reports": [
@@ -707,7 +736,7 @@
         "type": "inappropriate_content",
         "content": "发布不当言论",
         "status": "pending",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -717,7 +746,7 @@
         "type": "copyright_violation",
         "content": "播放未经授权的音乐",
         "status": "processing",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -727,7 +756,7 @@
         "type": "spam",
         "content": "频繁发送广告信息",
         "status": "resolved",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -737,7 +766,7 @@
         "type": "harassment",
         "content": "恶意辱骂其他用户",
         "status": "pending",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
@@ -747,7 +776,7 @@
         "type": "violence",
         "content": "直播内容包含暴力元素",
         "status": "resolved",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "videos": [
@@ -763,7 +792,7 @@
         "comments": 256,
         "shares": 156,
         "status": "approved",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -777,7 +806,7 @@
         "comments": 420,
         "shares": 320,
         "status": "approved",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -791,7 +820,7 @@
         "comments": 180,
         "shares": 95,
         "status": "approved",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -804,8 +833,8 @@
         "likes": 1560,
         "comments": 320,
         "shares": 280,
-        "status": "pending",
-        "created_at": "2026-07-08 13:42:35"
+        "status": "approved",
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
@@ -818,8 +847,8 @@
         "likes": 980,
         "comments": 210,
         "shares": 165,
-        "status": "rejected",
-        "created_at": "2026-07-08 13:42:35"
+        "status": "approved",
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "notifications": [
@@ -829,7 +858,7 @@
         "type": "follow",
         "content": "用户\"土豪哥\"关注了你",
         "status": "unread",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -837,7 +866,7 @@
         "type": "gift",
         "content": "用户\"土豪哥\"在你的直播间送了皇冠",
         "status": "unread",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -845,7 +874,7 @@
         "type": "system",
         "content": "恭喜你获得首次登录奖励：100金币",
         "status": "read",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -853,7 +882,7 @@
         "type": "stream",
         "content": "你关注的主播\"才艺主播小美\"开始直播了",
         "status": "unread",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
@@ -861,7 +890,7 @@
         "type": "transaction",
         "content": "你的提现申请已通过，5000金币已到账",
         "status": "read",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "blacklists": [
@@ -869,13 +898,13 @@
         "id": 1,
         "user_id": 4,
         "target_id": 2,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
         "user_id": 5,
         "target_id": 3,
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "system_logs": [
@@ -885,7 +914,7 @@
         "action": "登录系统",
         "target": "",
         "ip": "192.168.1.100",
-        "time": "2026-07-08 13:42:35",
+        "time": "2026-07-09 07:11:20",
         "type": "login"
       },
       {
@@ -894,7 +923,7 @@
         "action": "查看用户列表",
         "target": "用户管理",
         "ip": "192.168.1.100",
-        "time": "2026-07-08 13:42:35",
+        "time": "2026-07-09 07:11:20",
         "type": "view"
       },
       {
@@ -903,7 +932,7 @@
         "action": "审核通过主播",
         "target": "host1",
         "ip": "192.168.1.100",
-        "time": "2026-07-08 13:42:35",
+        "time": "2026-07-09 07:11:20",
         "type": "approve"
       },
       {
@@ -912,7 +941,7 @@
         "action": "编辑礼物",
         "target": "礼物ID: 1",
         "ip": "192.168.1.100",
-        "time": "2026-07-08 13:42:35",
+        "time": "2026-07-09 07:11:20",
         "type": "edit"
       },
       {
@@ -921,7 +950,7 @@
         "action": "处理举报",
         "target": "举报ID: 3",
         "ip": "192.168.1.100",
-        "time": "2026-07-08 13:42:35",
+        "time": "2026-07-09 07:11:20",
         "type": "process"
       },
       {
@@ -930,7 +959,7 @@
         "action": "发布系统公告",
         "target": "系统公告",
         "ip": "192.168.1.100",
-        "time": "2026-07-08 13:42:35",
+        "time": "2026-07-09 07:11:20",
         "type": "create"
       },
       {
@@ -939,7 +968,7 @@
         "action": "审核视频",
         "target": "视频ID: 4",
         "ip": "192.168.1.100",
-        "time": "2026-07-08 13:42:35",
+        "time": "2026-07-09 07:11:20",
         "type": "review"
       },
       {
@@ -948,7 +977,7 @@
         "action": "提现审核",
         "target": "用户ID: 2",
         "ip": "192.168.1.100",
-        "time": "2026-07-08 13:42:35",
+        "time": "2026-07-09 07:11:20",
         "type": "audit"
       }
     ],
@@ -959,7 +988,7 @@
         "content": "欢迎来到Gala Live直播平台！这是一份新手入门指南，帮助你快速了解平台功能...",
         "category": "help",
         "status": "published",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -967,7 +996,7 @@
         "content": "为了维护良好的直播环境，请遵守以下直播规范：1. 不得发布违法违规内容...",
         "category": "help",
         "status": "published",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -975,7 +1004,7 @@
         "content": "Gala Live是一款专注于互动娱乐的直播平台，致力于为用户提供优质的直播体验...",
         "category": "about",
         "status": "published",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -983,7 +1012,7 @@
         "content": "我们非常重视用户隐私保护，以下是我们的隐私政策...",
         "category": "about",
         "status": "published",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
@@ -991,7 +1020,7 @@
         "content": "Q: 如何成为主播？A: 请在个人中心申请主播认证...",
         "category": "help",
         "status": "draft",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "id_certifications": [
@@ -1005,9 +1034,9 @@
         "hand_photo": "/uploads/id-hand-1.jpg",
         "status": "approved",
         "admin_id": 1,
-        "reviewed_at": "2026-07-08 13:42:35",
+        "reviewed_at": "2026-07-09 07:11:20",
         "remark": "",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -1019,9 +1048,9 @@
         "hand_photo": "/uploads/id-hand-2.jpg",
         "status": "approved",
         "admin_id": 1,
-        "reviewed_at": "2026-07-08 13:42:35",
+        "reviewed_at": "2026-07-09 07:11:20",
         "remark": "",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -1035,7 +1064,7 @@
         "admin_id": null,
         "reviewed_at": null,
         "remark": "",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -1047,9 +1076,9 @@
         "hand_photo": "/uploads/id-hand-4.jpg",
         "status": "rejected",
         "admin_id": 1,
-        "reviewed_at": "2026-07-08 13:42:35",
+        "reviewed_at": "2026-07-09 07:11:20",
         "remark": "身份证信息不清晰",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       }
     ],
     "level_configs": [
@@ -1061,8 +1090,9 @@
         "max_exp": 100,
         "name": "LV.1 新手",
         "icon": "🌱",
+        "color": "#9ca3af",
         "benefits": "基础功能权限",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 2,
@@ -1072,8 +1102,9 @@
         "max_exp": 300,
         "name": "LV.2 普通",
         "icon": "⭐",
+        "color": "#60a5fa",
         "benefits": "解锁高级弹幕",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 3,
@@ -1083,8 +1114,9 @@
         "max_exp": 600,
         "name": "LV.3 活跃",
         "icon": "🌟",
+        "color": "#34d399",
         "benefits": "专属头像框",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 4,
@@ -1094,8 +1126,9 @@
         "max_exp": 1000,
         "name": "LV.4 达人",
         "icon": "💫",
+        "color": "#a78bfa",
         "benefits": "直播间优先进入",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 5,
@@ -1105,8 +1138,9 @@
         "max_exp": 1500,
         "name": "LV.5 精英",
         "icon": "💎",
+        "color": "#fbbf24",
         "benefits": "免费礼物领取",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 6,
@@ -1116,8 +1150,9 @@
         "max_exp": 2500,
         "name": "LV.6 大师",
         "icon": "👑",
+        "color": "#f87171",
         "benefits": "专属客服",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 7,
@@ -1127,8 +1162,9 @@
         "max_exp": 4000,
         "name": "LV.7 王者",
         "icon": "🏆",
+        "color": "#ec4899",
         "benefits": "全站排名展示",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 8,
@@ -1138,8 +1174,9 @@
         "max_exp": 6000,
         "name": "LV.8 传奇",
         "icon": "🔥",
+        "color": "#22d3ee",
         "benefits": "自定义房间",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 9,
@@ -1149,8 +1186,9 @@
         "max_exp": 10000,
         "name": "LV.9 至尊",
         "icon": "⚡",
+        "color": "#8b5cf6",
         "benefits": "专属徽章",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 10,
@@ -1160,8 +1198,9 @@
         "max_exp": 9999999,
         "name": "LV.10 VIP",
         "icon": "💠",
+        "color": "#f59e0b",
         "benefits": "全部特权",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 11,
@@ -1171,8 +1210,9 @@
         "max_exp": 500,
         "name": "LV.1 新手主播",
         "icon": "🎤",
+        "color": "#9ca3af",
         "benefits": "基础直播权限",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 12,
@@ -1182,8 +1222,9 @@
         "max_exp": 1500,
         "name": "LV.2 普通主播",
         "icon": "🎵",
+        "color": "#a78bfa",
         "benefits": "礼物分成50%",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 13,
@@ -1193,8 +1234,9 @@
         "max_exp": 3500,
         "name": "LV.3 人气主播",
         "icon": "🎶",
+        "color": "#ec4899",
         "benefits": "礼物分成55%",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 14,
@@ -1204,8 +1246,9 @@
         "max_exp": 6500,
         "name": "LV.4 明星主播",
         "icon": "⭐",
+        "color": "#fbbf24",
         "benefits": "礼物分成60%",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 15,
@@ -1215,8 +1258,9 @@
         "max_exp": 10000,
         "name": "LV.5 金牌主播",
         "icon": "🌟",
+        "color": "#34d399",
         "benefits": "礼物分成65%",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 16,
@@ -1226,8 +1270,9 @@
         "max_exp": 15000,
         "name": "LV.6 钻石主播",
         "icon": "💎",
+        "color": "#22d3ee",
         "benefits": "礼物分成70%",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 17,
@@ -1237,8 +1282,9 @@
         "max_exp": 25000,
         "name": "LV.7 皇冠主播",
         "icon": "👑",
+        "color": "#8b5cf6",
         "benefits": "礼物分成75%",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 18,
@@ -1248,8 +1294,9 @@
         "max_exp": 40000,
         "name": "LV.8 殿堂主播",
         "icon": "🏆",
+        "color": "#f87171",
         "benefits": "礼物分成80%",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 19,
@@ -1259,8 +1306,9 @@
         "max_exp": 60000,
         "name": "LV.9 传奇主播",
         "icon": "🔥",
+        "color": "#f59e0b",
         "benefits": "专属推荐位",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
       },
       {
         "id": 20,
@@ -1270,8 +1318,25 @@
         "max_exp": 9999999,
         "name": "LV.10 至尊主播",
         "icon": "⚡",
+        "color": "#d946ef",
         "benefits": "全部特权",
-        "created_at": "2026-07-08 13:42:35"
+        "created_at": "2026-07-09 07:11:20"
+      }
+    ],
+    "configs": [
+      {
+        "id": 1,
+        "key": "defaultCoins",
+        "value": "100",
+        "description": "新用户初始金币",
+        "created_at": "2026-07-09 07:11:20"
+      },
+      {
+        "id": 2,
+        "key": "defaultDiamonds",
+        "value": "0",
+        "description": "新用户初始钻石",
+        "created_at": "2026-07-09 07:11:20"
       }
     ]
   },
@@ -1282,9 +1347,9 @@
     "gifts": 11,
     "gift_records": 8,
     "messages": 7,
-    "follows": 7,
+    "follows": 11,
     "video_favorites": 6,
-    "transactions": 10,
+    "transactions": 9,
     "banners": 5,
     "categories": 9,
     "admins": 2,
@@ -1295,6 +1360,7 @@
     "system_logs": 9,
     "articles": 6,
     "id_certifications": 5,
-    "level_configs": 21
+    "level_configs": 21,
+    "configs": 3
   }
 }
