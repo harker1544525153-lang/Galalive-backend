@@ -158,7 +158,7 @@ router.post('/login', (req, res) => {
         }
       });
     } else {
-      bcrypt.compare(password, user.password, (error, match) => {
+      const match = bcrypt.compareSync(password, user.password);
         if (!match) {
           return res.status(400).json({ error: '账号或密码错误' });
         }
@@ -182,7 +182,6 @@ router.post('/login', (req, res) => {
             created_at: user.created_at
           }
         });
-      });
     }
   } catch (err) {
     res.status(500).json({ error: '服务器错误' });
@@ -236,17 +235,16 @@ router.post('/admin/login', (req, res) => {
       return res.status(400).json({ error: '账号或密码错误' });
     }
 
-    bcrypt.compare(password, admin.password, (error, match) => {
-      if (!match) {
-        return res.status(400).json({ error: '账号或密码错误' });
-      }
+    const match = bcrypt.compareSync(password, admin.password);
+    if (!match) {
+      return res.status(400).json({ error: '账号或密码错误' });
+    }
 
-      const token = jwt.sign({ id: admin.id, username: admin.username, isAdmin: true }, process.env.JWT_SECRET, { expiresIn: '24h' });
-      res.json({
-        message: '登录成功',
-        token,
-        admin: { id: admin.id, username: admin.username, role: admin.role }
-      });
+    const token = jwt.sign({ id: admin.id, username: admin.username, isAdmin: true }, process.env.JWT_SECRET, { expiresIn: '24h' });
+    res.json({
+      message: '登录成功',
+      token,
+      admin: { id: admin.id, username: admin.username, role: admin.role }
     });
   } catch (err) {
     res.status(500).json({ error: '服务器错误' });
