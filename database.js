@@ -15,6 +15,13 @@ class FileDatabase {
       const parsed = JSON.parse(data);
       this.tables = parsed.tables || {};
       this.autoIncrement = parsed.autoIncrement || {};
+      
+      const hasData = Object.keys(this.tables).length > 0 && 
+        Object.values(this.tables).some(table => table.length > 0);
+      
+      if (!hasData) {
+        this.initDefaultData();
+      }
     } catch {
       this.initDefaultData();
     }
@@ -98,7 +105,7 @@ class FileDatabase {
     ];
 
     this.tables['admins'] = [
-      { id: 1, username: 'admin', password: '$2a$10$OwE1/dx8McYmKiuwSpeIhONkaFx3/Ci3.E7I2mj10sjQIERnNutnu', created_at: now }
+      { id: 1, username: 'admin', password: '$2a$10$RKJqO9LlY0KI7Cwy8Cpkoel5IP2bIoSYWH662tGNaknRHgBL71.xK', created_at: now }
     ];
 
     this.tables['gifts'] = [

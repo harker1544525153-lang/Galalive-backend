@@ -22,8 +22,12 @@ const allowedOrigins = [
   'https://galalive-bd9lylikz-harker1544.vercel.app',
   'https://galalive-client-mjckme0dh-harker1544.vercel.app',
   'https://galalive-21fil1q63-harker1544.vercel.app',
+  'https://galalive-client-lutts11wq-harker1544.vercel.app',
+  'https://galalive-m3uuwrt40-harker1544.vercel.app',
+  'https://galalive-backend-hgvmv6jjb-harker1544.vercel.app',
   'https://galalive-client.vercel.app',
-  'https://galalive-pc.vercel.app'
+  'https://galalive-pc.vercel.app',
+  'https://harker1544525153-lang.github.io'
 ];
 
 app.use(cors({
