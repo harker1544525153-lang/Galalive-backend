@@ -20,6 +20,7 @@
     }
   ],
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "JWT_SECRET": "gala_live_secret_key_2026"
   }
 }
