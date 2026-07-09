@@ -4,7 +4,7 @@
       {
         "id": 1,
         "username": "host1",
-        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
+        "password": "$2a$10$DF6k47r42zfn.JGEF3P2wO3R9r8NnltNufOZonUVwp/w2lA8Vy83a",
         "phone": "13800138001",
         "nickname": "才艺主播小美",
         "is_host": 1,
@@ -25,7 +25,7 @@
       {
         "id": 2,
         "username": "host2",
-        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
+        "password": "$2a$10$DF6k47r42zfn.JGEF3P2wO3R9r8NnltNufOZonUVwp/w2lA8Vy83a",
         "phone": "13800138002",
         "nickname": "游戏大神阿杰",
         "is_host": 1,
@@ -46,7 +46,7 @@
       {
         "id": 3,
         "username": "host3",
-        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
+        "password": "$2a$10$DF6k47r42zfn.JGEF3P2wO3R9r8NnltNufOZonUVwp/w2lA8Vy83a",
         "phone": "13800138003",
         "nickname": "户外探险家",
         "is_host": 1,
@@ -67,7 +67,7 @@
       {
         "id": 4,
         "username": "user1",
-        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
+        "password": "$2a$10$DF6k47r42zfn.JGEF3P2wO3R9r8NnltNufOZonUVwp/w2lA8Vy83a",
         "phone": "13800138004",
         "nickname": "快乐观众",
         "is_host": 0,
@@ -88,7 +88,7 @@
       {
         "id": 5,
         "username": "user2",
-        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
+        "password": "$2a$10$DF6k47r42zfn.JGEF3P2wO3R9r8NnltNufOZonUVwp/w2lA8Vy83a",
         "phone": "13800138005",
         "nickname": "土豪哥",
         "is_host": 0,
@@ -109,7 +109,7 @@
       {
         "id": 6,
         "username": "user3",
-        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
+        "password": "$2a$10$DF6k47r42zfn.JGEF3P2wO3R9r8NnltNufOZonUVwp/w2lA8Vy83a",
         "phone": "13800138006",
         "nickname": "新人小白",
         "is_host": 0,
@@ -130,7 +130,7 @@
       {
         "id": 7,
         "username": "host4",
-        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
+        "password": "$2a$10$DF6k47r42zfn.JGEF3P2wO3R9r8NnltNufOZonUVwp/w2lA8Vy83a",
         "phone": "13800138007",
         "nickname": "美食达人小雨",
         "is_host": 1,
@@ -151,7 +151,7 @@
       {
         "id": 8,
         "username": "host5",
-        "password": "$2a$10$W88TssBNzh9krpZs4dou2.TMB6P0aKa7Phkfu9AJSqhRVWTk3bY72",
+        "password": "$2a$10$DF6k47r42zfn.JGEF3P2wO3R9r8NnltNufOZonUVwp/w2lA8Vy83a",
         "phone": "13800138008",
         "nickname": "脱口秀小王",
         "is_host": 1,
