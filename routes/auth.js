@@ -110,22 +110,28 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
   const { username, password, phone, code } = req.body;
+  console.log('[DEBUG] User login attempt:', { phone, username, hasPassword: !!password, hasCode: !!code });
 
   const db = getDB();
   try {
     let user;
     if (phone) {
       user = db.prepare('SELECT * FROM users WHERE phone = ?').get(phone);
+      console.log('[DEBUG] User found by phone:', !!user);
       if (!user) {
         user = db.prepare('SELECT * FROM users WHERE username = ?').get(phone);
+        console.log('[DEBUG] User found by username:', !!user);
       }
     } else if (username) {
       user = db.prepare('SELECT * FROM users WHERE username = ?').get(username);
+      console.log('[DEBUG] User found by username:', !!user);
     }
     
     if (!user) {
       return res.status(400).json({ error: '用户不存在' });
     }
+
+    console.log('[DEBUG] User data:', { id: user.id, phone: user.phone, username: user.username, hasPassword: !!user.password });
 
     if (code) {
       const stored = smsCodeStore[phone];
