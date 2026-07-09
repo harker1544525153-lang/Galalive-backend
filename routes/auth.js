@@ -226,28 +226,38 @@ router.put('/profile', authenticateToken, (req, res) => {
 
 router.post('/admin/login', (req, res) => {
   const { username, password } = req.body;
+  console.log('[DEBUG] Admin login attempt:', username);
 
   const db = getDB();
   try {
+    console.log('[DEBUG] DB initialized:', !!db);
     const admin = db.prepare('SELECT * FROM admins WHERE username = ?').get(username);
+    console.log('[DEBUG] Admin found:', !!admin);
     
     if (!admin) {
       return res.status(400).json({ error: '账号或密码错误' });
     }
 
+    console.log('[DEBUG] Comparing password...');
     const match = bcrypt.compareSync(password, admin.password);
+    console.log('[DEBUG] Password match:', match);
+    
     if (!match) {
       return res.status(400).json({ error: '账号或密码错误' });
     }
 
+    console.log('[DEBUG] JWT_SECRET exists:', !!process.env.JWT_SECRET);
     const token = jwt.sign({ id: admin.id, username: admin.username, isAdmin: true }, process.env.JWT_SECRET, { expiresIn: '24h' });
+    console.log('[DEBUG] Login successful');
+    
     res.json({
       message: '登录成功',
       token,
       admin: { id: admin.id, username: admin.username, role: admin.role }
     });
   } catch (err) {
-    res.status(500).json({ error: '服务器错误' });
+    console.error('[ERROR] Login failed:', err);
+    res.status(500).json({ error: '服务器错误', details: err.message });
   }
 });
 
