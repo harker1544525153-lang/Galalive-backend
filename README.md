@@ -60,7 +60,7 @@ DB_PATH=data.json
 2. 配置环境变量 `JWT_SECRET`
 3. 自动构建部署
 
-访问地址: `https://galalive-backend-hgvmv6jjb-harker1544.vercel.app`
+访问地址: `https://galalive-backend.vercel.app`
 
 ## Mock数据
 
