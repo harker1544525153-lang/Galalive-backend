@@ -10,6 +10,7 @@
     {
       "src": "/(.*)",
       "dest": "/server.js",
+      "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Origin": "https://harker1544525153-lang.github.io",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
